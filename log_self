@@ -1,0 +1,2229 @@
+-O exten
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.592946 s, 173 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  exten
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O extent
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.530988 s, 193 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 3e7b05e9-144c-4569-8e16-55ffa18acf85
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O 63bit
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.526474 s, 195 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  63bit
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O 64bit
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.455073 s, 225 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: d3b2ba06-5828-4cd9-8995-2eb6b18f58c7
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O bgalloc
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.614432 s, 167 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  bgalloc
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O bigalloc
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.427958 s, 239 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 6248 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/6248 files, 5792/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img contains a file system with errors, check forced.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong for group #3 (8188, counted=7420).
+Fix? yes
+
+Free blocks count wrong (513568, counted=501280).
+Fix? yes
+
+
+test.img: ***** FILE SYSTEM WAS MODIFIED *****
+test.img: 11/24992 files (0.0% non-contiguous), 10720/512000 blocks
+-O inine_data
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.477306 s, 215 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  inine_data
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O inline_data
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.568576 s, 180 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 958d3f3b-5b97-4636-b71d-f7a3a9d674ad
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11924/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36798/512000 blocks
+-I 2
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.450654 s, 227 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+mke2fs: invalid inode size 2 (min 128/max 1024)
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-I 1
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.447544 s, 229 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+mke2fs: invalid inode size 1 (min 128/max 1024)
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-I 99
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.386276 s, 265 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+mke2fs: invalid inode size 99 (min 128/max 1024)
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-I 256
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.388439 s, 264 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 1979cfb4-4590-453a-8be1-e389b701e328
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O geta_bg
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.377998 s, 271 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  geta_bg
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O meta_bg
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.375483 s, 273 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+The resize_inode and meta_bg features are not compatible.
+They can not be both enabled simultaneously.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-r 0
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.383951 s, 267 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 25064 inodes
+Filesystem UUID: b36c20fb-14fc-42a1-9c14-629e1a63e24e
+Superblock backups stored on blocks: 
+	8193, 16385, 24577, 32769, 40961, 49153, 57345, 65537, 73729, 81921, 
+	90113, 98305
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/25064 files, 3199/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/121464 files, 15512/512000 blocks
+-r 1
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.379096 s, 270 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 7b0a601e-c2b6-4b41-bcc5-58bc7fb1f594
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-r 5
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.379816 s, 270 MB/s
+mke2fs: Filesystem revision too high while trying to create revision 5
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-r 65536
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.394146 s, 260 MB/s
+mke2fs: Filesystem revision too high while trying to create revision 65536
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O resi_inode
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.389662 s, 263 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  resi_inode
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O resize_inode
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.416599 s, 246 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: dc9b4b4c-fd6b-463c-bf5e-e3748df1a459
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O spars_super
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.383092 s, 267 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  spars_super
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O sparse_super
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.376814 s, 272 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 754d4f2d-08a5-4495-969b-f598276d7bc5
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-b 512
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.421829 s, 243 MB/s
+mke2fs: invalid block size -  512
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-b 1024
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.382925 s, 267 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: ffdd49e9-f243-419d-a69e-bb4f685832fc
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-i 64MB
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.420664 s, 243 MB/s
+mke2fs: invalid inode ratio  64MB (min 1024/max 67108864)
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-i 64
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.392982 s, 261 MB/s
+mke2fs: invalid inode ratio  64 (min 1024/max 67108864)
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-N 65536
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.392565 s, 261 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 65520 inodes
+Filesystem UUID: 74b4e8bb-1a28-4802-9e5c-b0a46b84f772
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/65520 files, 22065/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/317520 files, 85939/512000 blocks
+-N 1
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.401024 s, 255 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 104 inodes
+Filesystem UUID: abd4104f-583e-447a-95b5-4f55dd94aedf
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/104 files, 5711/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/504 files, 6685/512000 blocks
+-N 100
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.398442 s, 257 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 104 inodes
+Filesystem UUID: 3d8a7f2b-8bd9-49f4-8a74-62e19b15e1df
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/104 files, 5711/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/504 files, 6685/512000 blocks
+-C 1
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.382843 s, 267 MB/s
+mke2fs: invalid cluster size -  1
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-C 99
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.391503 s, 262 MB/s
+mke2fs: invalid cluster size -  99
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-C 65555
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.380831 s, 269 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+mke2fs: specifying a cluster size requires the bigalloc feature
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O fkex_bg
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.386624 s, 265 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  fkex_bg
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O flex_bg
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.414914 s, 247 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 19a78a3b-9d92-4be9-a1c9-429cfb5983a3
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-G 5
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.388164 s, 264 MB/s
+mke2fs: flex_bg size must be a power of 2
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-G 1 
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.375066 s, 273 MB/s
+mke2fs: Illegal number for flex_bg size
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-G 65536
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.381251 s, 269 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 12acff77-1870-4c69-8965-4d6a4006aaa5
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O journals
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.396882 s, 258 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  journals
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O journal_dev
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.39815 s, 257 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 0 inodes
+Filesystem UUID: 77959ff9-fab9-4cdb-ae43-c40029ab85cf
+Superblock backups stored on blocks: 
+
+Zeroing journal device:   1024/100000             
+e2fsck 1.46.5 (30-Dec-2021)
+e2fsck: Filesystem has unsupported feature(s) while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Filesystem has unsupported feature(s) while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+e2fsck: Filesystem has unsupported feature(s) while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O encrypt
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.380566 s, 269 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 4815566a-1d5e-4335-9c4e-60221bec8b89
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O encry
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.400044 s, 256 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  encry
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O casefold
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.376167 s, 272 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 43fad5e6-bf02-40b2-a071-61e9c9fd06eb
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O casefol
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.3787 s, 270 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  casefol
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O verity
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.391749 s, 261 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: fddd5a2b-c38a-423b-a79e-2dd00e58f037
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O verit
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.378312 s, 271 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  verit
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O ext_attr
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.393261 s, 260 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: bf897103-5147-47c4-9ed8-f3646001f124
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O ext_att
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.386593 s, 265 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  ext_att
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O quota
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.416759 s, 246 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 490df8e1-1952-4f2a-bdae-1c503f743572
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11937/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36811/512000 blocks
+-O quot
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.378107 s, 271 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  quot
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O ea_inode
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.389281 s, 263 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: df26150c-be6f-44af-a7f5-cb757d478598
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O ea_inod
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.38098 s, 269 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  ea_inod
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-m 2
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.388455 s, 264 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 00c311b5-cf58-456b-be21-c201bdb56541
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-m 50
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.418435 s, 245 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: be55f8f6-5236-4bfd-ac35-c22f22ce63d6
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-m 99
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.394464 s, 260 MB/s
+mke2fs: invalid reserved blocks percent -  99
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-m 101
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.387623 s, 264 MB/s
+mke2fs: invalid reserved blocks percent -  101
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O metadata_csum
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.38201 s, 268 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 410e66ef-5b57-40b6-99ad-db32feb34e28
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O metadata_cs
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.397313 s, 258 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  metadata_cs
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O metadata_csum_seed
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.441923 s, 232 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 8a81d0d6-1e01-4700-8222-2c8570f2b969
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O metadata_csum_see
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.439111 s, 233 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  metadata_csum_see
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O has_journal
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.423164 s, 242 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 28fa94dd-198b-4cd2-99f7-b8b8df05967b
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O has_journa
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.814661 s, 126 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  has_journa
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O unint_bg
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.442914 s, 231 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  unint_bg
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O unint_b
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.492181 s, 208 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  unint_b
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O large_dir
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.505074 s, 203 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 76a753f1-a4e1-4457-9c86-28eae0382940
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O large_di
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.436524 s, 235 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  large_di
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O dir_nlink
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.423462 s, 242 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 7ce412a4-fa54-47a0-ada4-45ada6d240f1
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O dir_nli
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.415426 s, 246 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  dir_nli
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O sparse_super2
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.428782 s, 239 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 4f7295fe-796f-4f32-9b7b-dcb6679082a7
+Superblock backups stored on blocks: 
+	8193, 98305
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11151/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 35251/512000 blocks
+-O parse_super2
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.42675 s, 240 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  parse_super2
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O mmp
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.432595 s, 237 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 575fb8ec-1a7c-4765-94fe-96bad1f715d4
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Multiple mount protection is enabled with update interval 5 seconds.
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11926/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36800/512000 blocks
+-O mmc
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.403476 s, 254 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Invalid filesystem option set:  mmc
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+

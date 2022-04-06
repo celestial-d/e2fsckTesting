@@ -1,0 +1,742 @@
+-O extent,64bit
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.457927 s, 224 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: ba700b5a-ef47-4ae1-8263-c4881619b4e0
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O extent,bigalloc
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.487871 s, 210 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 6248 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/6248 files, 5792/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img contains a file system with errors, check forced.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong for group #3 (8188, counted=7420).
+Fix? yes
+
+Free blocks count wrong (513568, counted=501280).
+Fix? yes
+
+
+test.img: ***** FILE SYSTEM WAS MODIFIED *****
+test.img: 11/24992 files (0.0% non-contiguous), 10720/512000 blocks
+-O inline_data -I 128
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.592874 s, 173 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+mke2fs: 128 byte inodes are too small for inline data; specify larger size
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O meta_bg,^resize_inode -r 1
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.470634 s, 218 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 1860c5af-71fb-48ef-b2bd-1acedfe044d8
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 10384/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 34496/512000 blocks
+-O resize_inode,sparse_super
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.495244 s, 207 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 96107d35-d078-485a-bd09-6d080111e949
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O resize_inode,64bit
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.491529 s, 208 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 0738beb7-caff-410f-899f-67fe6fa8d598
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O 64bit ... 64
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.46226 s, 222 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+
+Filesystem too small for a journal
+Discarding device blocks:  0/64     done                            
+Creating filesystem with 64 1k blocks and 8 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+ext2fs_write_inode_full: Illegal inode number while writing reserved inodes
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O 64bit -b 4096
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.51019 s, 201 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/25000           done                            
+Creating filesystem with 25000 4k blocks and 25008 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/25008 files, 2609/25000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 128000 (4k) blocks.
+The filesystem on test.img is now 128000 (4k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/100032 files, 7332/128000 blocks
+-O 64bit -i 5000
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.419073 s, 244 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 20488 inodes
+Filesystem UUID: 26bfa595-5dc0-40e1-b56f-1b43fde3b7c9
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/20488 files, 10807/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/99288 files, 31381/512000 blocks
+-O 64bit -N 65536
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.493113 s, 208 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 65520 inodes
+Filesystem UUID: d225b6b8-892d-4fa9-b5bd-324c7e2e3023
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/65520 files, 22065/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/317520 files, 85939/512000 blocks
+-O bigalloc -b 4096
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.483614 s, 212 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/24992           done                            
+Creating filesystem with 24992 4k blocks and 1568 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/1568 files, 1216/24992 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 128000 (4k) blocks.
+The filesystem on test.img is now 128000 (4k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img contains a file system with errors, check forced.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong for group #0 (32692, counted=7924).
+Fix? yes
+
+Free blocks count wrong (523072, counted=126784).
+Fix? yes
+
+
+test.img: ***** FILE SYSTEM WAS MODIFIED *****
+test.img: 11/1568 files (0.0% non-contiguous), 1216/128000 blocks
+-O bigalloc -C 16384
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.460334 s, 222 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 6248 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/6248 files, 5792/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img contains a file system with errors, check forced.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong for group #3 (8188, counted=7420).
+Fix? yes
+
+Free blocks count wrong (513568, counted=501280).
+Fix? yes
+
+
+test.img: ***** FILE SYSTEM WAS MODIFIED *****
+test.img: 11/24992 files (0.0% non-contiguous), 10720/512000 blocks
+-O flex_bg -G 512
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.465854 s, 220 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 44b9812b-eec8-429a-99f5-c5fd1b2dcf9c
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O bigalloc -b 4096 -C 16384
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.428104 s, 239 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/25000           done                            
+Creating filesystem with 25000 4k blocks and 6256 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/6256 files, 1440/25000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 128000 (4k) blocks.
+The filesystem on test.img is now 128000 (4k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img contains a file system with errors, check forced.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Free blocks count wrong for group #0 (32408, counted=31640).
+Fix? yes
+
+Free blocks count wrong (129632, counted=126560).
+Fix? yes
+
+
+test.img: ***** FILE SYSTEM WAS MODIFIED *****
+test.img: 11/6256 files (9.1% non-contiguous), 1440/128000 blocks
+-b 4096 ... 64
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.424045 s, 241 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+
+Filesystem too small for a journal
+Discarding device blocks:  0/64     done                            
+Creating filesystem with 64 4k blocks and 32 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/32 files, 12/64 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 128000 (4k) blocks.
+The filesystem on test.img is now 128000 (4k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/128 files, 28/128000 blocks
+-b 4096 -i 5000
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.456042 s, 225 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/25000           done                            
+Creating filesystem with 25000 4k blocks and 20480 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/20480 files, 2326/25000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 128000 (4k) blocks.
+The filesystem on test.img is now 128000 (4k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/81920 files, 6200/128000 blocks
+-b 4096 -I 128
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.445335 s, 230 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+128-byte inodes cannot handle dates beyond 2038 and are deprecated
+Discarding device blocks:     0/25000           done                            
+Creating filesystem with 25000 4k blocks and 25024 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/25024 files, 1828/25000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 128000 (4k) blocks.
+The filesystem on test.img is now 128000 (4k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/100096 files, 4208/128000 blocks
+-b 4096 -N 32
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.443369 s, 231 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/25000           done                            
+Creating filesystem with 25000 4k blocks and 32 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/32 files, 1048/25000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 128000 (4k) blocks.
+The filesystem on test.img is now 128000 (4k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/128 files, 1088/128000 blocks
+-b 4096 -r 1
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.453416 s, 226 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/25000           done                            
+Creating filesystem with 25000 4k blocks and 25008 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/25008 files, 2609/25000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 128000 (4k) blocks.
+The filesystem on test.img is now 128000 (4k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/100032 files, 7332/128000 blocks
+-O journal_dev -m 50
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.474379 s, 216 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 0 inodes
+Filesystem UUID: f61f3190-546a-4e52-b7b2-19ae9a945e38
+Superblock backups stored on blocks: 
+
+Zeroing journal device:   1024/100000             
+e2fsck 1.46.5 (30-Dec-2021)
+e2fsck: Filesystem has unsupported feature(s) while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Filesystem has unsupported feature(s) while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+e2fsck: Filesystem has unsupported feature(s) while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O meta_bg,resize_inode
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.468525 s, 219 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+The resize_inode and meta_bg features are not compatible.
+They can not be both enabled simultaneously.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+-O uninit_bg,metadata_csum
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.461731 s, 222 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: dcc5078a-57b2-4489-999e-ebcedd7443d0
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O metadata_csum,metadata_csum_seed
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.458265 s, 223 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: e284220b-406c-40c7-a3de-1c9b06d083d5
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O metadata_csum,^metadata_csum_seed
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.455527 s, 225 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: 6aabfdbc-cbde-4128-9ddc-67c88fdb4b31
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 11925/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 36799/512000 blocks
+-O meta_bg,^resize_inode -r 1
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.483146 s, 212 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:      0/100000             done                            
+Creating filesystem with 100000 1k blocks and 24960 inodes
+Filesystem UUID: eb4bfdaf-0faf-42e2-bd44-0789338e8bcc
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables:  0/13     done                            
+Writing inode tables:  0/13     done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information:  0/13     done
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/24960 files, 10384/100000 blocks
+resize2fs 1.46.5 (30-Dec-2021)
+Resizing the filesystem on test.img to 512000 (1k) blocks.
+The filesystem on test.img is now 512000 (1k) blocks long.
+
+e2fsck 1.46.5 (30-Dec-2021)
+test.img: clean, 11/120960 files, 34496/512000 blocks
+-O ^metadata_csum,metadata_csum_seed
+\n
+100000+0 records in
+100000+0 records out
+102400000 bytes (102 MB, 98 MiB) copied, 0.468388 s, 219 MB/s
+mke2fs 1.46.5 (30-Dec-2021)
+The metadata_csum_seed feature requires the metadata_csum feature.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
+resize2fs 1.46.5 (30-Dec-2021)
+resize2fs: Bad magic number in super-block while trying to open test.img
+Couldn't find valid filesystem superblock.
+e2fsck 1.46.5 (30-Dec-2021)
+ext2fs_open2: Bad magic number in super-block
+e2fsck: Superblock invalid, trying backup blocks...
+e2fsck: Bad magic number in super-block while trying to open test.img
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 <device>
+ or
+    e2fsck -b 32768 <device>
+
