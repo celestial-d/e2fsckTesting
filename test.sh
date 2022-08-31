@@ -1,5 +1,6 @@
 #/bin/bash
 #
+#./test.sh 2>&1|tee log
 count=0
 IFS=$'\n\n'
 for line in `cat option`;
