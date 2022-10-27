@@ -1,0 +1,3182 @@
+####################################
+mkfs.xfs -b size=4K test.img
+normal
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.860854 s, 476 MB/s
+!!!!mkfs_xfs!!!!
+meta-data=test.img               isize=512    agcount=4, agsize=25000 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1 nrext64=0
+data     =                       bsize=4096   blocks=100000, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=16384, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+!!!!xfs_repair !!!!
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 1 - find and verify superblock...
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 2 - using internal log
+        - zero log...
+        - scan filesystem freespace and inode maps...
+        - found root inode chunk
+Phase 3 - for each AG...
+        - scan and clear agi unlinked lists...
+        - process known inodes and perform inode discovery...
+        - agno = 0
+        - agno = 1
+        - agno = 2
+        - agno = 3
+        - process newly discovered inodes...
+Phase 4 - check for duplicate blocks...
+        - setting up duplicate extent list...
+        - check for inodes claiming duplicate blocks...
+        - agno = 0
+        - agno = 2
+        - agno = 1
+        - agno = 3
+Phase 5 - rebuild AG headers and trees...
+        - reset superblock...
+Phase 6 - check inode connectivity...
+        - resetting contents of realtime bitmap and summary inodes
+        - traversing filesystem ...
+        - traversal finished ...
+        - moving disconnected inodes to lost+found ...
+Phase 7 - verify and correct link counts...
+done
+####################################
+mkfs.xfs -b size=5K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.799837 s, 512 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 5K for -b size option. Value must be a power of 2.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -b size=2048 test.img
+normal
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.800486 s, 512 MB/s
+!!!!mkfs_xfs!!!!
+meta-data=test.img               isize=512    agcount=4, agsize=50000 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1 nrext64=0
+data     =                       bsize=2048   blocks=200000, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=2048   blocks=32768, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+!!!!xfs_repair !!!!
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 1 - find and verify superblock...
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 2 - using internal log
+        - zero log...
+        - scan filesystem freespace and inode maps...
+        - found root inode chunk
+Phase 3 - for each AG...
+        - scan and clear agi unlinked lists...
+        - process known inodes and perform inode discovery...
+        - agno = 0
+        - agno = 1
+        - agno = 2
+        - agno = 3
+        - process newly discovered inodes...
+Phase 4 - check for duplicate blocks...
+        - setting up duplicate extent list...
+        - check for inodes claiming duplicate blocks...
+        - agno = 0
+        - agno = 2
+        - agno = 1
+        - agno = 3
+Phase 5 - rebuild AG headers and trees...
+        - reset superblock...
+Phase 6 - check inode connectivity...
+        - resetting contents of realtime bitmap and summary inodes
+        - traversing filesystem ...
+        - traversal finished ...
+        - moving disconnected inodes to lost+found ...
+Phase 7 - verify and correct link counts...
+done
+####################################
+mkfs.xfs -b size=511 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.796458 s, 514 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 511 for -b size option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m bigtime=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.836099 s, 490 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -m bigtime option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m bigtime=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.805085 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -m bigtime option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m crc=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.808901 s, 506 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -m crc option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m crc=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.809481 s, 506 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -m crc option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m finobt=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.805277 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -m finobt option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m finobt=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.807115 s, 507 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -m finobt option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m uuid=11111111111111111111111 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.84294 s, 486 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 11111111111111111111111 for -m uuid option
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m rmapbt=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.802969 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -m rmapbt option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m rmapbt=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.802995 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -m rmapbt option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m reflink=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.807821 s, 507 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -m reflink option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m reflink=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.807599 s, 507 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -m reflink option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d agcount=15M test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.801916 s, 511 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 15M for -d agcount option. Unit suffixes are not allowed.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d agcount=101M test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.803579 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 101M for -d agcount option. Unit suffixes are not allowed.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d agcount=401M test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.801725 s, 511 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 401M for -d agcount option. Unit suffixes are not allowed.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d agsize=15M test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.803819 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 15M for -d agsize option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d agsize=101M test.img
+normal
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.800419 s, 512 MB/s
+!!!!mkfs_xfs!!!!
+meta-data=test.img               isize=512    agcount=4, agsize=25856 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1 nrext64=0
+data     =                       bsize=4096   blocks=100000, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=16384, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+!!!!xfs_repair !!!!
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 1 - find and verify superblock...
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 2 - using internal log
+        - zero log...
+        - scan filesystem freespace and inode maps...
+        - found root inode chunk
+Phase 3 - for each AG...
+        - scan and clear agi unlinked lists...
+        - process known inodes and perform inode discovery...
+        - agno = 0
+        - agno = 1
+        - agno = 2
+        - agno = 3
+        - process newly discovered inodes...
+Phase 4 - check for duplicate blocks...
+        - setting up duplicate extent list...
+        - check for inodes claiming duplicate blocks...
+        - agno = 1
+        - agno = 0
+        - agno = 2
+        - agno = 3
+Phase 5 - rebuild AG headers and trees...
+        - reset superblock...
+Phase 6 - check inode connectivity...
+        - resetting contents of realtime bitmap and summary inodes
+        - traversing filesystem ...
+        - traversal finished ...
+        - moving disconnected inodes to lost+found ...
+Phase 7 - verify and correct link counts...
+done
+####################################
+mkfs.xfs -d agsize=401M test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.805807 s, 508 MB/s
+!!!!mkfs_xfs!!!!
+agsize (102656 blocks) too big, data area is 100000 blocks
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d file=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.808638 s, 507 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -d file option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d file=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.804357 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -d file option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d sunit=1000 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.862763 s, 475 MB/s
+!!!!mkfs_xfs!!!!
+both data sunit and data swidth options must be specified
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d su=256 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.808055 s, 507 MB/s
+!!!!mkfs_xfs!!!!
+both data su and data sw options must be specified
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d su=1000 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.802535 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+both data su and data sw options must be specified
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d rtinherit=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.802288 s, 511 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -d rtinherit option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d rtinherit=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.799562 s, 512 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -d rtinherit option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d extszinherit=6K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.810206 s, 506 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 6K for -d extszinherit option. Unit suffixes are not allowed.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d daxinherit=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.805341 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -d daxinherit option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d daxinherit=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.7978 s, 513 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -d daxinherit option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i size=128 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.80362 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 128 for -i size option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i size=255 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.824165 s, 497 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 255 for -i size option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i size=500 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.797077 s, 514 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 500 for -i size option. Value must be a power of 2.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i size=3K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.811041 s, 505 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 3K for -i size option. Unit suffixes are not allowed.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i maxpct=0% test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.805773 s, 508 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 0% for -i maxpct option. Unit suffixes are not allowed.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i maxpct=101% test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.80926 s, 506 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 101% for -i maxpct option. Unit suffixes are not allowed.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i maxpct=99 test.img
+normal
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.808873 s, 506 MB/s
+!!!!mkfs_xfs!!!!
+meta-data=test.img               isize=512    agcount=4, agsize=25000 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1 nrext64=0
+data     =                       bsize=4096   blocks=100000, imaxpct=99
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=16384, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+!!!!xfs_repair !!!!
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 1 - find and verify superblock...
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 2 - using internal log
+        - zero log...
+        - scan filesystem freespace and inode maps...
+        - found root inode chunk
+Phase 3 - for each AG...
+        - scan and clear agi unlinked lists...
+        - process known inodes and perform inode discovery...
+        - agno = 0
+        - agno = 1
+        - agno = 2
+        - agno = 3
+        - process newly discovered inodes...
+Phase 4 - check for duplicate blocks...
+        - setting up duplicate extent list...
+        - check for inodes claiming duplicate blocks...
+        - agno = 0
+        - agno = 2
+        - agno = 3
+        - agno = 1
+Phase 5 - rebuild AG headers and trees...
+        - reset superblock...
+Phase 6 - check inode connectivity...
+        - resetting contents of realtime bitmap and summary inodes
+        - traversing filesystem ...
+        - traversal finished ...
+        - moving disconnected inodes to lost+found ...
+Phase 7 - verify and correct link counts...
+done
+####################################
+mkfs.xfs -i maxpct=200 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.804657 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 200 for -i maxpct option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i align=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.848738 s, 483 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -i align option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i align=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.800184 s, 512 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -i align option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i projid32bit=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.80094 s, 511 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -i projid32bit option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i projid32bit=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.805275 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -i projid32bit option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i sparse=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.806045 s, 508 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -i sparse option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i sparse=5 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.804544 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 5 for -i sparse option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l internal=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.80456 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -l internal option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l internal=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.832852 s, 492 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -l internal option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l size=256 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.807537 s, 507 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 256 for -l size option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l version=33K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.806309 s, 508 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 33K for -l version option. Unit suffixes are not allowed.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l lazy-count=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.808175 s, 507 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -l lazy-count option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l lazy-count=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.808924 s, 506 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4 for -l lazy-count option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -n size=2K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.801063 s, 511 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2K for -n size option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -n size=1000 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.796198 s, 514 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 1000 for -n size option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -n size=4000 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.808946 s, 506 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4000 for -n size option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -n version=1 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.805366 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 1 for -n version option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -n ftype=2 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.797437 s, 514 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 2 for -n ftype option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -r extsize=1K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.805268 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 1K for -r extsize option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -r extsize=400M test.img
+problem image size 400MB
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.801415 s, 511 MB/s
+!!!!mkfs_xfs!!!!
+meta-data=test.img               isize=512    agcount=4, agsize=25000 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1 nrext64=0
+data     =                       bsize=4096   blocks=100000, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=16384, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=419430400 blocks=0, rtextents=0
+!!!!xfs_repair !!!!
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 1 - find and verify superblock...
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 2 - using internal log
+        - zero log...
+        - scan filesystem freespace and inode maps...
+        - found root inode chunk
+Phase 3 - for each AG...
+        - scan and clear agi unlinked lists...
+        - process known inodes and perform inode discovery...
+        - agno = 0
+        - agno = 1
+        - agno = 2
+        - agno = 3
+        - process newly discovered inodes...
+Phase 4 - check for duplicate blocks...
+        - setting up duplicate extent list...
+        - check for inodes claiming duplicate blocks...
+        - agno = 1
+        - agno = 3
+        - agno = 0
+        - agno = 2
+Phase 5 - rebuild AG headers and trees...
+        - reset superblock...
+Phase 6 - check inode connectivity...
+        - resetting contents of realtime bitmap and summary inodes
+        - traversing filesystem ...
+        - traversal finished ...
+        - moving disconnected inodes to lost+found ...
+Phase 7 - verify and correct link counts...
+done
+####################################
+mkfs.xfs -r extsize=500M test.img
+problem image size 400MB
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.802604 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+meta-data=test.img               isize=512    agcount=4, agsize=25000 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1 nrext64=0
+data     =                       bsize=4096   blocks=100000, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=16384, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=524288000 blocks=0, rtextents=0
+!!!!xfs_repair !!!!
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 1 - find and verify superblock...
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 2 - using internal log
+        - zero log...
+        - scan filesystem freespace and inode maps...
+        - found root inode chunk
+Phase 3 - for each AG...
+        - scan and clear agi unlinked lists...
+        - process known inodes and perform inode discovery...
+        - agno = 0
+        - agno = 1
+        - agno = 2
+        - agno = 3
+        - process newly discovered inodes...
+Phase 4 - check for duplicate blocks...
+        - setting up duplicate extent list...
+        - check for inodes claiming duplicate blocks...
+        - agno = 0
+        - agno = 3
+        - agno = 1
+        - agno = 2
+Phase 5 - rebuild AG headers and trees...
+        - reset superblock...
+Phase 6 - check inode connectivity...
+        - resetting contents of realtime bitmap and summary inodes
+        - traversing filesystem ...
+        - traversal finished ...
+        - moving disconnected inodes to lost+found ...
+Phase 7 - verify and correct link counts...
+done
+####################################
+mkfs.xfs -s size=256 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.836594 s, 490 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 256 for -s size option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -s size=600 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.800269 s, 512 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 600 for -s size option. Value must be a power of 2.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -s size=33K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.822591 s, 498 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 33K for -s size option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -s size=64K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.807979 s, 507 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 64K for -s size option. Value is too large.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -L 1111111111111 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.848319 s, 483 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 1111111111111 for -L option
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m bigtime=1,crc=0 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.802958 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+timestamps later than 2038 not supported without CRC support
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+V4 filesystems are deprecated and will not be supported by future versions.
+####################################
+mkfs.xfs -m finobt=1,crc=0 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.802056 s, 511 MB/s
+!!!!mkfs_xfs!!!!
+finobt not supported without CRC support
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+V4 filesystems are deprecated and will not be supported by future versions.
+####################################
+mkfs.xfs -m inobtcount=1,finobt=1,crc=0 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.809815 s, 506 MB/s
+!!!!mkfs_xfs!!!!
+finobt not supported without CRC support
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+V4 filesystems are deprecated and will not be supported by future versions.
+####################################
+mkfs.xfs -m inobtcount=1,finobt=0,crc=1 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.807816 s, 507 MB/s
+!!!!mkfs_xfs!!!!
+inode btree counters not supported without finobt support
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -m reflink=1,crc=0 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.799647 s, 512 MB/s
+!!!!mkfs_xfs!!!!
+reflink not supported without CRC support
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+V4 filesystems are deprecated and will not be supported by future versions.
+####################################
+mkfs.xfs -d agcount=4,agsize=6500 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.80248 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+Cannot specify both -d agcount and -d agsize
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d agsize=6250,agcount=4 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.816142 s, 502 MB/s
+!!!!mkfs_xfs!!!!
+Cannot specify both -d agsize and -d agcount
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d name=1234 -l internal=0 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.804143 s, 509 MB/s
+!!!!mkfs_xfs!!!!
+-d name option respecified
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d size=1,file=0 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.802476 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 1 for -d size option. Value is too small.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -d switth=5,sunit=0 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.803363 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+unknown option -d switth=5
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -i sparse=1 -m crc=0 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.806871 s, 508 MB/s
+!!!!mkfs_xfs!!!!
+sparse inodes not supported without CRC support
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+V4 filesystems are deprecated and will not be supported by future versions.
+####################################
+mkfs.xfs -l agnum=AG,internal=0 test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.806366 s, 508 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value AG for -l agnum option. Value not recognized as number.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l internal=1,logdev=test2.img test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.79777 s, 513 MB/s
+!!!!mkfs_xfs!!!!
+Cannot specify both -l internal and -l logdev
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l sunit=4K,su=4K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.813523 s, 503 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 4K for -l sunit option. Unit suffixes are not allowed.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l su=4K,sunit=4K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.805616 s, 508 MB/s
+!!!!mkfs_xfs!!!!
+Cannot specify both -l su and -l sunit
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l sunit=1K,su=4K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.808638 s, 507 MB/s
+!!!!mkfs_xfs!!!!
+Invalid value 1K for -l sunit option. Unit suffixes are not allowed.
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -l su=1K,sunit=4K test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.798409 s, 513 MB/s
+!!!!mkfs_xfs!!!!
+Cannot specify both -l su and -l sunit
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
+####################################
+mkfs.xfs -n ftype=1 -m crc=0 test.img
+normal
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.841538 s, 487 MB/s
+!!!!mkfs_xfs!!!!
+V4 filesystems are deprecated and will not be supported by future versions.
+meta-data=test.img               isize=256    agcount=4, agsize=25000 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=0        finobt=0, sparse=0, rmapbt=0
+         =                       reflink=0    bigtime=0 inobtcount=0 nrext64=0
+data     =                       bsize=4096   blocks=100000, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=16384, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+!!!!xfs_repair !!!!
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 1 - find and verify superblock...
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 2 - using internal log
+        - zero log...
+        - scan filesystem freespace and inode maps...
+        - found root inode chunk
+Phase 3 - for each AG...
+        - scan and clear agi unlinked lists...
+        - process known inodes and perform inode discovery...
+        - agno = 0
+        - agno = 1
+        - agno = 2
+        - agno = 3
+        - process newly discovered inodes...
+Phase 4 - check for duplicate blocks...
+        - setting up duplicate extent list...
+        - check for inodes claiming duplicate blocks...
+        - agno = 0
+        - agno = 1
+        - agno = 3
+        - agno = 2
+Phase 5 - rebuild AG headers and trees...
+        - reset superblock...
+Phase 6 - check inode connectivity...
+        - resetting contents of realtime bitmap and summary inodes
+        - traversing filesystem ...
+        - traversal finished ...
+        - moving disconnected inodes to lost+found ...
+Phase 7 - verify and correct link counts...
+done
+####################################
+mkfs.xfs -n ftype=0 -m crc=1 test.img
+problem 
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.802748 s, 510 MB/s
+!!!!mkfs_xfs!!!!
+meta-data=test.img               isize=512    agcount=4, agsize=25000 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1 nrext64=0
+data     =                       bsize=4096   blocks=100000, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=16384, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+!!!!xfs_repair !!!!
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 1 - find and verify superblock...
+Cannot get host filesystem geometry.
+Repair may fail if there is a sector size mismatch between
+the image and the host filesystem.
+Phase 2 - using internal log
+        - zero log...
+        - scan filesystem freespace and inode maps...
+        - found root inode chunk
+Phase 3 - for each AG...
+        - scan and clear agi unlinked lists...
+        - process known inodes and perform inode discovery...
+        - agno = 0
+        - agno = 1
+        - agno = 2
+        - agno = 3
+        - process newly discovered inodes...
+Phase 4 - check for duplicate blocks...
+        - setting up duplicate extent list...
+        - check for inodes claiming duplicate blocks...
+        - agno = 0
+        - agno = 2
+        - agno = 1
+        - agno = 3
+Phase 5 - rebuild AG headers and trees...
+        - reset superblock...
+Phase 6 - check inode connectivity...
+        - resetting contents of realtime bitmap and summary inodes
+        - traversing filesystem ...
+        - traversal finished ...
+        - moving disconnected inodes to lost+found ...
+Phase 7 - verify and correct link counts...
+done
+####################################
+mkfs.xfs -m crc=1 -n ftype=0  test.img
+############################### 
+!!!!dd if=/dev/zero of=test.img bs=1k count=100000!!!!
+400000+0 records in
+400000+0 records out
+409600000 bytes (410 MB, 391 MiB) copied, 0.801342 s, 511 MB/s
+!!!!mkfs_xfs!!!!
+Directory ftype field always enabled on CRC enabled filesystems
+Usage: mkfs.xfs
+/* blocksize */		[-b size=num]
+/* config file */	[-c options=xxx]
+/* metadata */		[-m crc=0|1,finobt=0|1,uuid=xxx,rmapbt=0|1,reflink=0|1,
+			    inobtcount=0|1,bigtime=0|1]
+/* data subvol */	[-d agcount=n,agsize=n,file,name=xxx,size=num,
+			    (sunit=value,swidth=value|su=num,sw=num|noalign),
+			    sectsize=num
+/* force overwrite */	[-f]
+/* inode size */	[-i perblock=n|size=num,maxpct=n,attr=0|1|2,
+			    projid32bit=0|1,sparse=0|1,nrext64=0|1]
+/* no discard */	[-K]
+/* log subvol */	[-l agnum=n,internal,size=num,logdev=xxx,version=n
+			    sunit=value|su=num,sectsize=num,lazy-count=0|1]
+/* label */		[-L label (maximum 12 characters)]
+/* naming */		[-n size=num,version=2|ci,ftype=0|1]
+/* no-op info only */	[-N]
+/* prototype file */	[-p fname]
+/* quiet */		[-q]
+/* realtime subvol */	[-r extsize=num,size=num,rtdev=xxx]
+/* sectorsize */	[-s size=num]
+/* version */		[-V]
+			devicename
+<devicename> is required unless -d name=xxx is given.
+<num> is xxx (bytes), xxxs (sectors), xxxb (fs blocks), xxxk (xxx KiB),
+      xxxm (xxx MiB), xxxg (xxx GiB), xxxt (xxx TiB) or xxxp (xxx PiB).
+<value> is xxx (512 byte blocks).
