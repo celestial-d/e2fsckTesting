@@ -1,2 +1,2 @@
 # e2fsckTesting
-This is for the e2fsck depednecy testing
+This repo perform e2fsck utilities testing for ext4 and xfs configurations relationship extracted from manual.
