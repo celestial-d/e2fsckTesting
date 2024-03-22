@@ -5,4 +5,4 @@ This repo contains scripts (Python and Bash) of configuration(extraced manually)
 
 - "[Understanding Configuration Dependencies of File Systems](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mFcB0JMAAAAJ&sortby=pubdate&citation_for_view=mFcB0JMAAAAJ:LgRImbQfgY4C)", Tabassum Mahmud, Duo Zhang, Om Rameshwar Gatla, and Mai Zheng, Proceedings of the 14th ACM Workshop on Hot Topics in Storage and File Systems (HotStorage), 2022. [Best Paper Nominee]
 
-A comprehensive framework can be found [here](https://github.com/data-storage-lab/ConfD)
+The comprehensive framework can be found [here](https://github.com/data-storage-lab/ConfD)
